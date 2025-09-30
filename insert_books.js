@@ -4,14 +4,65 @@
 const { MongoClient } = require('mongodb');
 
 // Connection URI (replace with your MongoDB connection string if using Atlas)
-const uri = 'mongodb://localhost:27017';
+const uri = '';
 
 // Database and collection names
 const dbName = 'plp_bookstore';
 const collectionName = 'books';
 
-// Sample book data
+// Sample books
+
 const books = [
+  {
+    title: "The Midnight Library",
+    author: "Matt Haig",
+    genre: "Fantasy",
+    published_year: 2020,
+    price: 13.99,
+    in_stock: true,
+    pages: 304,
+    publisher: "Canongate Books"
+  },
+  {
+    title: "Project Hail Mary",
+    author: "Andy Weir",
+    genre: "Science Fiction",
+    published_year: 2021,
+    price: 16.99,
+    in_stock: true,
+    pages: 496,
+    publisher: "Ballantine Books"
+  },
+  {
+    title: "The Silent Patient",
+    author: "Alex Michaelides",
+    genre: "Thriller",
+    published_year: 2019,
+    price: 14.99,
+    in_stock: true,
+    pages: 336,
+    publisher: "Celadon Books"
+  },
+  {
+    title: "Where the Crawdads Sing",
+    author: "Delia Owens",
+    genre: "Mystery",
+    published_year: 2018,
+    price: 15.99,
+    in_stock: true,
+    pages: 384,
+    publisher: "G.P. Putnam's Sons"
+  },
+  {
+    title: "The Song of Achilles",
+    author: "Madeline Miller",
+    genre: "Historical Fiction",
+    published_year: 2011,
+    price: 12.49,
+    in_stock: true,
+    pages: 378,
+    publisher: "Ecco Press"
+  },
   {
     title: 'To Kill a Mockingbird',
     author: 'Harper Lee',
@@ -132,7 +183,7 @@ const books = [
     pages: 342,
     publisher: 'Thomas Cautley Newby'
   }
-];
+]; 
 
 // Function to insert books into MongoDB
 async function insertBooks() {
@@ -176,8 +227,8 @@ async function insertBooks() {
 }
 
 // Run the function
-insertBooks().catch(console.error);
 
+module.exports = { insertBooks, client };
 /*
  * Example MongoDB queries you can try after running this script:
  *

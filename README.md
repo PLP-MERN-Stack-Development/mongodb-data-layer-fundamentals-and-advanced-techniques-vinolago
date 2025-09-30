@@ -1,59 +1,115 @@
 # MongoDB Fundamentals - Week 1
 
-## Setup Instructions
+This project demonstrates how to interact with a MongoDB Atlas database using Node.js, without using Mongoose. It covers:
 
-Before you begin this assignment, please make sure you have the following installed:
+- Inserting sample data
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+- Running various queries
 
-### Node.js Package Setup
+- Using aggregation pipelines
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+- Creating indexes
 
-```bash
-# Initialize a package.json file
-npm init -y
+- Pagination and projections
 
-# Install the MongoDB Node.js driver
-npm install mongodb
-```
+- Using .explain() to analyze performance
 
-## Assignment Overview
+### 🛠️ Tech Stack
 
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
+Node.js
 
-## Submission
+MongoDB Atlas (cloud database)
 
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
+MongoDB Native Driver
 
-## Getting Started
+dotenv (.env file for credentials)
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
+📁 Project Structure
+.
+├── main.js # Main script (insert + queries + aggregations)
+├── db.js # Database connection helper
+└── .env # MongoDB URI (not committed to Git)
 
-## Files Included
+📦 Setup Instructions
 
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
+1. Clone the repo & install dependencies
+   npm install
 
-## Requirements
+2. Add your MongoDB URI to .env
 
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
+Create a .env file:
 
-## Resources
+MONGODBATLAS_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
 
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
+⚠️ Make sure the URI is properly encoded and points to your cluster.
+
+3. Run the project
+   node main.js
+
+It will:
+
+Connect to your MongoDB Atlas cluster
+
+Insert sample books
+
+Run queries (filter, update, delete)
+
+Perform aggregations
+
+Create indexes and demonstrate their performance
+
+### 📖 Features Covered
+
+- Insertion
+
+- Drops existing collection
+
+- Inserts a list of 15+ books with details
+
+### 🔍 Basic Queries
+
+- Find by genre, author, or year
+
+- Update and delete documents
+
+### 📊 Aggregations
+
+- Average price by genre
+
+- Top author by book count
+
+- Books grouped by decade
+
+### ⚡ Indexing
+
+- Index on title
+
+- Compound index on author + published_year
+
+- .explain() usage for performance
+
+### 📄 Pagination
+
+- Skip/limit (5 books per page)
+
+- Sort by price
+
+- Return only needed fields (projection)
+
+### 🧠 Learning Goals
+
+- Understand the structure and querying power of MongoDB
+
+- Learn how to use the MongoDB native driver (without Mongoose)
+
+- Practice using indexes, aggregations, and projections
+
+- Build confidence reading .explain() results
+
+### 📌 Future Ideas
+
+- Add CLI prompts (e.g. inquirer) to run custom queries
+
+- Expose this as an Express REST API
+
+- Connect to a frontend for browsing the bookstore
