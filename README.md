@@ -24,27 +24,9 @@ MongoDB Native Driver
 
 dotenv (.env file for credentials)
 
-📁 Project Structure
-.
-├── main.js # Main script (insert + queries + aggregations)
-├── db.js # Database connection helper
-└── .env # MongoDB URI (not committed to Git)
+### Run the project
 
-📦 Setup Instructions
-
-1. Clone the repo & install dependencies
-   npm install
-
-2. Add your MongoDB URI to .env
-
-Create a .env file:
-
-MONGODBATLAS_URI=mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority
-
-⚠️ Make sure the URI is properly encoded and points to your cluster.
-
-3. Run the project
-   node main.js
+node queries.js
 
 It will:
 
@@ -57,14 +39,6 @@ Run queries (filter, update, delete)
 Perform aggregations
 
 Create indexes and demonstrate their performance
-
-### 📖 Features Covered
-
-- Insertion
-
-- Drops existing collection
-
-- Inserts a list of 15+ books with details
 
 ### 🔍 Basic Queries
 
