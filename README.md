@@ -1,5 +1,7 @@
 # MongoDB Fundamentals - Week 1
 
+![Database screenshot](images/databasedb.jpg)
+
 This project demonstrates how to interact with a MongoDB Atlas database using Node.js, without using Mongoose. It covers:
 
 - Inserting sample data
